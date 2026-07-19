@@ -5,11 +5,11 @@ export function Hero() {
   return (
     <div className="mx-auto max-w-6xl px-8 pt-14">
       <h1 className="max-w-xl text-[38px] font-bold leading-[1.2] tracking-tight text-ink-900">
-        Renting made refreshingly straightforward.
+        Renting, without the runaround.
       </h1>
       <p className="mt-3.5 max-w-lg text-[15.5px] text-ink-600">
-        A family-run lettings agency that&apos;s known Enfield&apos;s streets for over thirty
-        years — and treats every landlord and tenant like a neighbour.
+        Thirty years of experience across Enfield, Barnet and the surrounding
+        areas, with every landlord and tenant treated like a neighbour.
       </p>
 
       <form className="mt-7 flex max-w-3xl flex-col gap-2 rounded-xl border border-ink-300 bg-white p-1.5 sm:flex-row sm:items-center sm:gap-0">
