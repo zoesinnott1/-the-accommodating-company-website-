@@ -56,7 +56,7 @@ export function ServiceTiers() {
           </h2>
           <p className="mt-2 text-[13.5px] text-ink-600">
             Every landlord wants a different amount of involvement — pick the tier that
-            matches how hands-off you'd like to be.
+            matches how hands-off you&apos;d like to be.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
