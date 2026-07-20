@@ -15,7 +15,10 @@ export function LandlordsCta() {
             achieve.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <Link href="/contact" className={cn(buttonVariants({ variant: "primary" }))}>
+            <Link href="/landlords/valuation" className={cn(buttonVariants({ variant: "primary" }))}>
+              Request a valuation
+            </Link>
+            <Link href="/contact" className={cn(buttonVariants({ variant: "secondary" }))}>
               Get in touch
             </Link>
           </div>

@@ -14,7 +14,7 @@ export function LandlordsHero() {
         portfolio of forty, we tailor our service to what you actually need.
       </p>
       <div className="mt-6">
-        <Link href="/contact" className={cn(buttonVariants({ variant: "primary" }))}>
+        <Link href="/landlords/valuation" className={cn(buttonVariants({ variant: "primary" }))}>
           Request a valuation
         </Link>
       </div>
