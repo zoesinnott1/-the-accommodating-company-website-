@@ -4,6 +4,7 @@ import { Hero } from "@/components/home/hero";
 import { LandlordTenantPanels } from "@/components/home/landlord-tenant-panels";
 import { TeamTeaser } from "@/components/home/team-teaser";
 import { Testimonial } from "@/components/home/testimonial";
+import { LatestGuide } from "@/components/home/latest-guide";
 import { PropertyGrid } from "@/modules/properties/property-grid";
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
         <PropertyGrid />
         <LandlordTenantPanels />
         <TeamTeaser />
+        <LatestGuide />
         <Testimonial />
       </main>
       <SiteFooter />

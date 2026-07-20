@@ -9,6 +9,8 @@ import { ProcessSteps } from "@/components/shared/process-steps";
 import { IconCardGrid } from "@/components/shared/icon-card-grid";
 import { TipsList } from "@/components/shared/tips-list";
 import { TrustStrip } from "@/components/shared/trust-strip";
+import { GuideCallout } from "@/components/guides/guide-callout";
+import { getLatestGuide } from "@/modules/guides/data/guides";
 
 export const metadata: Metadata = {
   title: "Tenants",
@@ -56,6 +58,7 @@ export default function TenantsPage() {
         <TenantsHero />
         <ProcessSteps heading="How it works" steps={RENTING_STEPS} />
         <TenantFees />
+        <GuideCallout guide={getLatestGuide()} />
         <IconCardGrid heading="Why rent with us" items={TENANT_BENEFITS} />
         <TipsList
           heading="Moving-in essentials"

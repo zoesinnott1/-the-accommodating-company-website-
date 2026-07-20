@@ -8,6 +8,7 @@ const COLUMNS: { heading: string; links: { href: string; label: string }[] }[] =
       { href: "/properties", label: "Properties" },
       { href: "/landlords", label: "Landlords" },
       { href: "/tenants", label: "Tenants" },
+      { href: "/guides", label: "Guides" },
       { href: "/about/team", label: "Meet the team" },
     ],
   },
