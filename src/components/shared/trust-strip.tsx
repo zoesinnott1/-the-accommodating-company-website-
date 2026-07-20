@@ -17,13 +17,18 @@ const CREDENTIALS = [
   { mark: "TDS", name: "Tenancy Deposit Scheme" },
 ];
 
-export function TrustStrip() {
+export function TrustStrip({ description }: { description?: string } = {}) {
   return (
     <section className="border-b border-ink-300 py-14">
       <div className="mx-auto max-w-6xl px-8">
-        <h2 className="mb-7 text-2xl font-semibold tracking-tight text-ink-900">
-          Accredited and regulated
-        </h2>
+        <div className="mb-7 max-w-lg">
+          <h2 className="text-2xl font-semibold tracking-tight text-ink-900">
+            Accredited and regulated
+          </h2>
+          {description ? (
+            <p className="mt-2 text-[13.5px] text-ink-600">{description}</p>
+          ) : null}
+        </div>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {CREDENTIALS.map((credential) => (
             <Card key={credential.mark}>
