@@ -8,7 +8,7 @@ export function GuideCard({ guide }: { guide: Guide }) {
     <Link href={`/guides/${guide.slug}`} className="block">
       <Card className="h-full transition-colors hover:border-brand-500">
         <CardBody className="flex h-full flex-col p-6">
-          <Badge variant="neutral">{guide.category}</Badge>
+          <Badge variant="category">{guide.category}</Badge>
           <h3 className="mt-3 text-[16px] font-semibold leading-snug text-ink-900">
             {guide.title}
           </h3>

@@ -15,7 +15,7 @@ export function GuideCallout({ guide }: { guide: Guide }) {
           <Card className="transition-colors hover:border-brand-500">
             <CardBody className="flex flex-col items-start gap-3 p-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <Badge variant="neutral">{guide.category}</Badge>
+                <Badge variant="category">{guide.category}</Badge>
                 <h3 className="mt-2 text-[15px] font-semibold text-ink-900">{guide.title}</h3>
                 <p className="mt-1 text-[13px] text-ink-600">{guide.excerpt}</p>
               </div>

@@ -22,4 +22,7 @@ export interface Guide {
   excerpt: string;
   body: GuideBlock[];
   sourceLinks: GuideSourceLink[];
+  ctaHeading?: string;
+  ctaDescription?: string;
+  ctaContactSuffix?: string;
 }

@@ -35,7 +35,7 @@ export default async function GuideArticlePage({ params }: { params: GuideParams
       <SiteHeader />
       <main>
         <article className="mx-auto max-w-2xl px-8 pt-14 pb-20">
-          <Badge variant="neutral">{guide.category}</Badge>
+          <Badge variant="category">{guide.category}</Badge>
           <h1 className="mt-3 text-[30px] font-bold leading-[1.25] tracking-tight text-ink-900">
             {guide.title}
           </h1>
@@ -48,7 +48,11 @@ export default async function GuideArticlePage({ params }: { params: GuideParams
             <GuideContent blocks={guide.body} />
           </div>
 
-          <GuideCta />
+          <GuideCta
+            heading={guide.ctaHeading}
+            description={guide.ctaDescription}
+            contactSuffix={guide.ctaContactSuffix}
+          />
           <GuideSources links={guide.sourceLinks} />
         </article>
       </main>
