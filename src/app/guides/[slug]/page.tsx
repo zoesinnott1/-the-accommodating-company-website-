@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Badge } from "@/components/ui/badge";
+import { GuideBreadcrumb } from "@/components/guides/guide-breadcrumb";
 import { GuideContent } from "@/components/guides/guide-content";
 import { GuideSources } from "@/components/guides/guide-sources";
 import { GuideCta } from "@/components/guides/guide-cta";
@@ -35,6 +36,7 @@ export default async function GuideArticlePage({ params }: { params: GuideParams
       <SiteHeader />
       <main>
         <article className="mx-auto max-w-2xl px-8 pt-14 pb-20">
+          <GuideBreadcrumb />
           <Badge variant="category">{guide.category}</Badge>
           <h1 className="mt-3 text-[30px] font-bold leading-[1.25] tracking-tight text-ink-900">
             {guide.title}
