@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
-import { ImagePlaceholder } from "@/components/shared/image-placeholder";
 import { RIGHTMOVE_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { SocialProofRow } from "./social-proof-row";
@@ -37,10 +37,16 @@ export function Hero() {
             </Link>
           </div>
         </div>
-        <ImagePlaceholder
-          label={"Photo placeholder—e.g. a well-kept period terrace on a leafy Enfield street"}
-          className="aspect-[4/3.2]"
-        />
+        <div className="relative aspect-[4/3.2] overflow-hidden rounded-card">
+          <Image
+            src="/images/hero-street.jpg"
+            alt="A leafy residential street of period terraced houses in Enfield"
+            fill
+            priority
+            sizes="(min-width: 1024px) 45vw, 100vw"
+            className="object-cover"
+          />
+        </div>
       </div>
 
       <SocialProofRow />
