@@ -1,11 +1,15 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { HouseLogo } from "@/components/house-logo";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { RIGHTMOVE_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
+// "Properties" no longer points at an on-site search (see Phase 1
+// repositioning) — it's handled separately below as an external link to
+// Rightmove, styled to stand out from the internal nav links.
 const NAV_LINKS = [
-  { href: "/properties", label: "Properties" },
   { href: "/landlords", label: "Landlords" },
   { href: "/tenants", label: "Tenants" },
   { href: "/about", label: "About" },
@@ -20,18 +24,24 @@ export function SiteHeader() {
           <HouseLogo className="h-[22px] w-[22px] flex-shrink-0" />
           <span className="whitespace-nowrap">The Accommodating Company</span>
         </Link>
-        <nav className="hidden gap-6 text-[13.5px] text-ink-600 md:flex">
+        <nav className="hidden items-center gap-6 text-[13.5px] text-ink-600 md:flex">
+          <a
+            href={RIGHTMOVE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-medium text-brand-700 hover:text-brand-600"
+          >
+            Latest properties
+            <ArrowUpRight size={13} aria-hidden />
+          </a>
           {NAV_LINKS.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-ink-900">
               {link.label}
             </Link>
           ))}
         </nav>
-        <div className="hidden items-center gap-3 md:flex">
-          <a
-            href="tel:02084478400"
-            className={cn(buttonVariants({ variant: "secondary", size: "sm" }))}
-          >
+        <div className="hidden items-center gap-5 md:flex">
+          <a href="tel:02084478400" className="text-[13.5px] text-ink-600 hover:text-ink-900">
             020 8447 8400
           </a>
           <Link href="/landlords/valuation" className={cn(buttonVariants({ variant: "primary", size: "sm" }))}>

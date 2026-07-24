@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { RIGHTMOVE_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function AboutCta() {
@@ -15,9 +17,15 @@ export function AboutCta() {
             team directly.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <Link href="/properties" className={cn(buttonVariants({ variant: "primary" }))}>
+            <a
+              href={RIGHTMOVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(buttonVariants({ variant: "primary" }))}
+            >
               View properties
-            </Link>
+              <ArrowUpRight size={16} aria-hidden />
+            </a>
             <Link href="/contact" className="text-[13px] text-ink-600 hover:text-ink-900">
               Get in touch
             </Link>

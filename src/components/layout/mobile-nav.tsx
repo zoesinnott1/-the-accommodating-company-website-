@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { RIGHTMOVE_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 interface NavLink {
@@ -66,6 +67,16 @@ export function MobileNav({ navLinks }: { navLinks: NavLink[] }) {
                 </button>
               </div>
               <nav className="flex flex-1 flex-col gap-1 px-8 py-6">
+                <a
+                  href={RIGHTMOVE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="flex items-center gap-1.5 rounded-lg px-3 py-3.5 text-[17px] font-medium text-brand-700 hover:bg-white"
+                >
+                  Latest properties
+                  <ArrowUpRight size={16} aria-hidden />
+                </a>
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}

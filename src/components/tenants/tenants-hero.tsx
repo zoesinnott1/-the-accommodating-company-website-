@@ -1,5 +1,6 @@
-import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import { RIGHTMOVE_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function TenantsHero() {
@@ -13,9 +14,15 @@ export function TenantsHero() {
         first viewing through to the end of your tenancy.
       </p>
       <div className="mt-6">
-        <Link href="/properties" className={cn(buttonVariants({ variant: "primary" }))}>
-          Search properties
-        </Link>
+        <a
+          href={RIGHTMOVE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(buttonVariants({ variant: "primary" }))}
+        >
+          View properties on Rightmove
+          <ArrowUpRight size={16} aria-hidden />
+        </a>
       </div>
     </div>
   );

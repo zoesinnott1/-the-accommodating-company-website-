@@ -1,15 +1,17 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { HouseLogo } from "@/components/house-logo";
+import { RIGHTMOVE_URL } from "@/lib/constants";
 
-const COLUMNS: { heading: string; links: { href: string; label: string }[] }[] = [
+const COLUMNS: { heading: string; links: { href: string; label: string; external?: boolean }[] }[] = [
   {
     heading: "Explore",
     links: [
-      { href: "/properties", label: "Properties" },
+      { href: RIGHTMOVE_URL, label: "Latest properties", external: true },
       { href: "/landlords", label: "Landlords" },
       { href: "/tenants", label: "Tenants" },
       { href: "/guides", label: "Guides" },
-      { href: "/about/team", label: "Meet the team" },
+      { href: "/about#team", label: "Meet the team" },
     ],
   },
   {
@@ -51,13 +53,27 @@ export function SiteFooter() {
             <div key={column.heading}>
               <h4 className="mb-3 text-[12.5px] font-medium text-ink-900">{column.heading}</h4>
               <ul className="flex flex-col gap-2">
-                {column.links.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="hover:text-ink-900">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {column.links.map((link) =>
+                  link.external ? (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-brand-700 hover:text-brand-600"
+                      >
+                        {link.label}
+                        <ArrowUpRight size={12} aria-hidden />
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={link.href}>
+                      <Link href={link.href} className="hover:text-ink-900">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
           ))}
